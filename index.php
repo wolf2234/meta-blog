@@ -19,10 +19,26 @@
                 <input type="text" class="search-input" placeholder="Search">
             </div>
         </header>
-
-
         <main class="main">
-            <div class="posts">
+            <div class="head">
+                <h1 class="head__title"><?php the_title(); ?></h1>
+                <div class="head__links">
+                    <a href="" class="head__link">Home</a>
+                    <a href="" class="head__link">Link One</a>
+                </div>
+            </div>
+            <div class="container slider">
+                <div class="slider__item">
+                    <img src="<?php echo bloginfo('template_url');?>/assets/img/2.jpg" class="slider__img" alt="">
+                </div>
+                <div class="slider__item">
+                    <img src="<?php echo bloginfo('template_url');?>/assets/img/2.jpg" class="slider__img" alt="">
+                </div>
+                <div class="slider__item">
+                    <img src="<?php echo bloginfo('template_url');?>/assets/img/2.jpg" class="slider__img" alt="">
+                </div>
+            </div>
+            <div class="container posts">
                 <div class="post__items">
                         <?php
                         $myposts = get_posts( [
@@ -36,7 +52,13 @@
                             $user = get_field("post_user");
                             ?>
                                 <div class="post__item">
-                                    <?php the_post_thumbnail('post-thumbnail'); ?> <br>
+                                    <?php
+                                        if ( has_post_thumbnail() ) {
+                                            the_post_thumbnail('post-thumbnail'); 
+                                        } else {
+                                            echo "<img src='" . get_template_directory_uri() ."/assets/img/no-image.png' . alt=''>";
+                                        } 
+                                    ?> <br>
                                     <?php the_field('sup_text'); ?> <br>
                                     <?php the_title(); ?> <br>
                                     <?php echo $user['user_avatar']; ?> <br>
