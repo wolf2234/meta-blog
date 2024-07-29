@@ -24,9 +24,9 @@ function meta_blog_scripts() {
     true: this script will be in footer.  
     array('jquery'): this script will add after jquery.
     */
-	wp_enqueue_script( 'slick', get_template_directory_uri() . 'assets/js/slick.min.js', array('jquery'), null, true);
-	wp_enqueue_script( 'jq-script', get_template_directory_uri() . 'assets/js/jq-script.js', array('jquery'), null, true);
-	wp_enqueue_script( 'scripts', get_template_directory_uri() . 'assets/js/scripts.js', array('jquery'), null, true);
+	wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/slick.min.js', array('jquery'), null, true);
+	wp_enqueue_script( 'jq-script', get_template_directory_uri() . '/assets/js/jq-script.js', array('jquery'), null, true);
+	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), null, true);
 } 
 
 

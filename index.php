@@ -29,13 +29,23 @@
             </div>
             <div class="container slider">
                 <div class="slider__item">
-                    <img src="<?php echo bloginfo('template_url');?>/assets/img/2.jpg" class="slider__img" alt="">
+                    <img src="<?php echo the_field('slider_image'); ?>" class="slider__img" alt="">
+                    <div class="slider__block">
+                        <?php
+                            $user = get_field("post_user");
+                        ?>
+                        <?php the_field('sup_text'); ?> <br>
+                        <?php the_field('slider_title'); ?> <br>
+                        <?php echo $user['user_avatar']; ?> <br>
+                        <?php echo $user['display_name']; ?> <br>
+                        <?php the_field('post_date'); ?>
+                    </div>
                 </div>
                 <div class="slider__item">
-                    <img src="<?php echo bloginfo('template_url');?>/assets/img/2.jpg" class="slider__img" alt="">
+                    <img src="<?php echo the_field('slider_image'); ?>" class="slider__img" alt="">
                 </div>
                 <div class="slider__item">
-                    <img src="<?php echo bloginfo('template_url');?>/assets/img/2.jpg" class="slider__img" alt="">
+                    <img src="<?php echo the_field('slider_image'); ?>" class="slider__img" alt="">
                 </div>
             </div>
             <div class="container posts">
