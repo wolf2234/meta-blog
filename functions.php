@@ -6,6 +6,7 @@ add_action('after_setup_theme', 'meta_blog_nav_menu');
 
 function meta_blog_nav_menu() {
     register_nav_menu( 'top', 'menu in header' );
+    register_nav_menu( 'bottom', 'menu in footer' );
 }
 
 
