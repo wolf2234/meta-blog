@@ -56,28 +56,29 @@
                             $user = get_field("post_user");
                             ?>
                                 <div class="post__item">
-                                    <?php
-                                        if ( has_post_thumbnail() ) {
-                                            the_post_thumbnail([360, 240]); 
-                                        } else {
-                                            echo "<img src='" . get_template_directory_uri() ."/assets/img/no-image.png' . alt=''>";
-                                        } 
-                                    ?>
                                     <?php 
-                                        $p = get_post($post); 
+                                        $p = get_post($post);
+                                        $url = get_site_url();
                                     ?>
-                                    <a href="https://wp-online-shop.local/<?php echo $p->post_name; ?>" class="post__link">
-                                        <div class="post__block">
-                                            <sup class="post__sup-text post__sup-text_color"><?php the_field('sup_text'); ?></sup>
-                                            <h2 class="post__title"><?php the_title(); ?></h2>
-                                            <div class="post__bottom">
-                                                <div class="post__user">
-                                                    <?php echo $user['user_avatar']; ?>
-                                                    <sup class="display_name"><?php echo $user['display_name']; ?></sup>
+                                    <a href=<?php echo $url . "/" . $p->post_name; ?> class="post__link">
+                                        <?php
+                                            if ( has_post_thumbnail() ) {
+                                                the_post_thumbnail([360, 240]); 
+                                            } else {
+                                                echo "<img src='" . get_template_directory_uri() ."/assets/img/no-image.png' . alt=''>";
+                                            } 
+                                        ?>
+                                            <div class="post__block">
+                                                <sup class="post__sup-text post__sup-text_color"><?php the_field('sup_text'); ?></sup>
+                                                <h2 class="post__title"><?php the_title(); ?></h2>
+                                                <div class="post__bottom">
+                                                    <div class="post__user">
+                                                        <?php echo $user['user_avatar']; ?>
+                                                        <sup class="display_name"><?php echo $user['display_name']; ?></sup>
+                                                    </div>
+                                                    <sup class="post_date"><?php the_field('post_date'); ?></sup>
                                                 </div>
-                                                <sup class="post_date"><?php the_field('post_date'); ?></sup>
                                             </div>
-                                        </div>
                                     </a>
                                 </div>
                             <?php
