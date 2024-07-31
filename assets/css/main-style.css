@@ -92,6 +92,11 @@
     gap: 15px 10px;
 }
 
+.post__link {
+    display: inline-block;
+    color: inherit;
+}
+
 .post__item {
     display: flex;
     flex-direction: column;
