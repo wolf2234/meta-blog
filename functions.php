@@ -32,7 +32,4 @@ function meta_blog_scripts() {
 
 
 add_theme_support('custom-logo');
-add_theme_support('post-thumbnails', [
-    'height'  => 190,
-	'width'   => 190,
-]);
+add_theme_support('post-thumbnails');
