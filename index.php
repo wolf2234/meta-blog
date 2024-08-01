@@ -54,7 +54,7 @@
                         ] );
                         foreach( $myposts as $post ){ setup_postdata( $post );
                             $user = get_field("post_user");
-                            ?>
+                        ?>
                                 <div class="post__item">
                                     <?php 
                                         $p = get_post($post);
@@ -63,28 +63,30 @@
                                     <a href=<?php echo $url . "/" . $p->post_name; ?> class="post__link">
                                         <?php
                                             if ( has_post_thumbnail() ) {
-                                                the_post_thumbnail([360, 240]); 
+                                                the_post_thumbnail('thumbnail',[
+                                                    'class' => 'post__img',
+                                                ]); 
                                             } else {
                                                 echo "<img src='" . get_template_directory_uri() ."/assets/img/no-image.png' . alt=''>";
                                             } 
                                         ?>
-                                            <div class="post__block">
-                                                <sup class="post__sup-text post__sup-text_color"><?php the_field('sup_text'); ?></sup>
-                                                <h2 class="post__title"><?php the_title(); ?></h2>
-                                                <div class="post__bottom">
-                                                    <div class="post__user">
-                                                        <?php echo $user['user_avatar']; ?>
-                                                        <sup class="display_name"><?php echo $user['display_name']; ?></sup>
-                                                    </div>
+                                        <div class="post__block">
+                                            <sup class="post__sup-text post__sup-text_color"><?php the_field('sup_text'); ?></sup>
+                                            <h2 class="post__title"><?php the_title(); ?></h2>
+                                            <div class="post__bottom">
+                                                <div class="post__user">
+                                                    <?php echo $user['user_avatar']; ?>
+                                                    <sup class="display_name"><?php echo $user['display_name']; ?></sup>
                                                     <sup class="post_date"><?php the_field('post_date'); ?></sup>
                                                 </div>
                                             </div>
+                                        </div>
                                     </a>
                                 </div>
-                            <?php
+                        <?php
                         }
                         wp_reset_postdata();
-                        ?>
+                    ?>
                 </div>
             </div>
         </main>

@@ -31,10 +31,13 @@ Template Post Type: page, post
 
 
             <div class="container content">
+
+                <?php the_post_thumbnail('large', [
+                    'class' => 'content__img',
+                ]); ?>
+
                 <?php the_field('current_post'); ?>
             </div>
-
-
         </main>
         <?php include 'includes/footer.php' ?>
     </div>
