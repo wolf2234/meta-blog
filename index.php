@@ -46,7 +46,7 @@
                 <div class="post__items">
                         <?php
                         $myposts = get_posts( [
-                            'numberposts' => 10,
+                            'numberposts' => -1,
                             'category_name' => 'latest_post',
                             'order' => 'ASC',
                             'post_type' => 'post',
@@ -88,6 +88,7 @@
                         wp_reset_postdata();
                     ?>
                 </div>
+                <div class="post__button"><button class="load">load more</button></div>
             </div>
         </main>
         <?php include 'includes/footer.php' ?>
