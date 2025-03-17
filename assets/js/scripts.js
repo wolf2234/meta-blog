@@ -12,9 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
             let elementList = [...post.querySelectorAll(".post__item")];
             console.log(elementList);
             for (let i = currentItems; i <= currentItems + 3; i++) {
-                setTimeout(function () {
-                    elementList[i].style.display = "flex";
-                });
+                if (elementList[i]) {
+                    setTimeout(function () {
+                        elementList[i].style.display = "flex";
+                    });
+                }
             }
             currentItems += 3;
 

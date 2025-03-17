@@ -65,7 +65,7 @@
                                             if ( has_post_thumbnail() ) {
                                                 the_post_thumbnail('thumbnail',[
                                                     'class' => 'post__img',
-                                                ]); 
+                                                ]);
                                             } else {
                                                 echo "<img src='" . get_template_directory_uri() ."/assets/img/no-image.png' . alt=''>";
                                             } 
