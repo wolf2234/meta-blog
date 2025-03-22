@@ -9,7 +9,7 @@ Posts page, with the ability to go to a specific post page and content customiza
 -   HTML/CSS/JS;
 -   WordPress plugin ACF;
 
-## Getting Started
+## How to start?
 
 To run this theme, you need to follow these steps:
 
